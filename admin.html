@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Демо-админка — TractorMD</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="demo-bar">
+  <span><b>ДЕМО-АДМИНКА</b> · показывает, как менеджер будет управлять сайтом. Изменения сразу отражаются на витрине.</span>
+  <a href="index.html">← на сайт</a>
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="admin.html" class="logo"><span class="logo-mark">⚙</span><span>Админка <i>TractorMD</i></span></a>
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="index.html">Смотреть сайт</a>
+      <button class="btn btn-sm" style="background:#FDECEA;color:#9C2B1E" data-reset>Сбросить демо-данные</button>
+    </div>
+  </div>
+</header>
+
+<main class="container section">
+  <div class="note-banner">
+    <b>Как это будет в WordPress.</b> Финальная админка — это встроенная панель WordPress:
+    раздел «Техника» (все поля ниже), раздел «Заявки» с приходом писем на e-mail менеджера и раздел «Контейнеры».
+    Менеджер работает только здесь, сайт наполняется автоматически — вручную ничего в коде править не нужно.
+    Сейчас перед вами интерактивный макет той же логики: смените статус или дату — и вернитесь на сайт, стикеры и счётчики уже другие.
+  </div>
+
+  <div class="admin-wrap">
+    <div class="panel">
+      <h2>Техника <span class="tag">статус и даты — из админки</span></h2>
+      <table class="admin">
+        <thead><tr><th>Позиция</th><th>Статус</th><th>Срок поставки</th><th>Дата прибытия</th></tr></thead>
+        <tbody id="admin-rows"></tbody>
+      </table>
+      <p class="hint" style="margin-top:12px">
+        Поля «срок поставки» и «дата прибытия» связаны: меняете одно — второе пересчитывается.
+        Если рейс задержался, дату просто сдвигают вручную. Статус «В дороге» включает в карточке счётчик дней,
+        «В наличии» — убирает его и показывает дату прибытия.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Заявки на бронь</h2>
+      <div id="queue"></div>
+      <p class="hint" style="margin-top:12px">
+        Заявка приходит с формы на сайте (Имя, Фамилия, Телефон). В WordPress такая заявка уйдёт письмом на e-mail.
+        После предоплаты менеджер жмёт «Подтвердить бронь» — у товара появляется стикер «Забронировано» и кнопка блокируется.
+      </p>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:20px">
+    <h2>Что ещё будет в админке <span class="tag">план для WordPress</span></h2>
+    <div class="adv" style="grid-template-columns:repeat(3,1fr);margin-top:6px">
+      <div class="adv-item"><div class="ico">📦</div><h3>Техника</h3><p>Добавление позиции: название, марка, модель, серия, код, контейнер, цена, мощность, наработка, кабина, описание на RU и RO, до 15 фото с перетаскиванием порядка, видео.</p></div>
+      <div class="adv-item"><div class="ico">🚚</div><h3>Контейнеры</h3><p>Номер контейнера, дата прибытия, примечание. Позиции привязываются к контейнеру — на сайте сам появляется блок «Контейнеры в пути».</p></div>
+      <div class="adv-item"><div class="ico">🔔</div><h3>Заявки и брони</h3><p>Список заявок с ФИО и телефоном, письмо менеджеру на e-mail, отметка «подтверждена / отказ», автоматический перевод товара в «Забронировано».</p></div>
+      <div class="adv-item"><div class="ico">✉️</div><h3>Почта</h3><p>Заявки на выбранный e-mail менеджера, копия клиенту, защита от спама, лог отправленных писем.</p></div>
+      <div class="adv-item"><div class="ico">👥</div><h3>Роли</h3><p>Администратор и менеджер: менеджер видит только технику и заявки, без доступа к настройкам сайта.</p></div>
+      <div class="adv-item"><div class="ico">📊</div><h3>Статистика</h3><p>Просмотры карточек, сколько заявок и брони из них, популярные модели — чтобы понимать, что заказывать в следующий контейнер.</p></div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;margin:0;padding:0">
+      <span>© 2026 TractorMD · демо-режим: данные хранятся в браузере, реальные заявки не отправляются</span>
+      <span><a href="index.html">← вернуться на сайт</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

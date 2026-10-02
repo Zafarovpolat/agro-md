@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Карточка техники — TractorMD</title>
+<meta name="description" content="Характеристики, реальные фото, серийный номер, дата прибытия и бронирование трактора до поставки в Молдову.">
+<link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="demo-bar">
+  <span><b>ДЕМО-ВЕРСИЯ</b> · карточка техники со счётчиком поставки и бронированием</span>
+  <a href="index.html">← на главную</a>
+</div>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🚜</span><span>Tractor<i>MD</i></span></a>
+    <nav class="nav">
+      <a href="index.html#catalog" data-i18n="nav.catalog">Каталог</a>
+      <a href="index.html#how" data-i18n="nav.how">Как купить</a>
+      <a href="index.html#containers" data-i18n="nav.containers">Контейнеры</a>
+      <a href="index.html#contacts" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-link" href="tel:+37360123456">📞 <span>+373 60 123 456</span></a>
+      <div class="lang">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="ro">RO</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="index.html" data-i18n="bc.home">Главная</a><span class="sep">/</span>
+    <a href="index.html#catalog" data-i18n="nav.catalog">Каталог</a><span class="sep">/</span>
+    <span id="bc-current">—</span>
+  </div>
+</div>
+
+<main class="container" style="padding-bottom:20px">
+  <div id="product"></div>
+</main>
+
+<section class="section section-alt">
+  <div class="container center">
+    <h2 data-i18n="cta.title">Не нашли нужную модель?</h2>
+    <p class="muted" data-i18n="cta.text" style="max-width:620px;margin:0 auto 18px"></p>
+    <a class="btn btn-primary btn-lg" href="index.html#contacts" data-i18n="cta.submit">Отправить заявку</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;margin:0;padding:0">
+      <span>© 2026 TractorMD. <span data-i18n="footer.rights">Все права защищены.</span></span>
+      <span><span data-i18n="footer.updated">Каталог обновлён</span>: <b id="footer-updated">—</b></span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h2 data-i18n="form.book.title">Забронировать</h2>
+    <p class="modal-sub" id="modal-sub"></p>
+    <form id="book-form" class="form-grid">
+      <div class="row2">
+        <div><label class="lbl" data-i18n="form.name">Имя</label><input class="field-input" required placeholder="Иван"></div>
+        <div><label class="lbl" data-i18n="form.surname">Фамилия</label><input class="field-input" required placeholder="Петров"></div>
+      </div>
+      <div><label class="lbl" data-i18n="form.phone">Телефон</label><input class="field-input" type="tel" required placeholder="+373 ___ ___ ___"></div>
+      <div><label class="lbl" data-i18n="form.comment">Комментарий</label>
+        <textarea class="field-input" rows="2" id="modal-comment"></textarea></div>
+      <label class="consent"><input type="checkbox" required checked> <span data-i18n="form.consent"></span></label>
+      <button class="btn btn-accent btn-wide" type="submit" data-i18n="form.book.title">Забронировать</button>
+      <button class="btn btn-ghost btn-wide" type="button" id="modal-cancel" data-i18n="form.cancel">Отмена</button>
+      <p class="hint center" data-i18n="form.book.note"></p>
+    </form>
+    <div id="modal-done" style="display:none">
+      <div class="modal-note"><b data-i18n="form.ok.title"></b><br><span data-i18n="form.ok.text"></span></div>
+      <button class="btn btn-ghost btn-wide" id="modal-close" style="margin-top:14px" data-i18n="form.close">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
